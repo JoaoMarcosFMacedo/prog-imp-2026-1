@@ -16,6 +16,9 @@ public class Exec01{
 
         System.out.printf("%s , que nome bonito!", nome);
 
+        if( idade >= 18 ){
+            System.out.println("Já pode ser preso");
+        }
         
     }
 
