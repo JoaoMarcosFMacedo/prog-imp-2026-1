@@ -1,10 +1,10 @@
 import java.util.Scanner;
-public class Exec01{
+public class Exec1{
     public static Scanner scanner = new Scanner(System.in);
     public static final int ANO_FINAL = 2026;
     public static void main( String [] args){
 
-        int idade = 0, qtsPesosa, somaIdade = 0;
+        int idade = 0, qtsPesosa = 0 , somaIdade = 0;
         double media;
         
         System.out.println("Óla, professor!");
@@ -50,7 +50,7 @@ public class Exec01{
             System.out.printf("%d", i);
         }
         
-        for(int i = 1; i>= qtsPesosa; i+= 1){
+        for (int i = 1; i<= qtsPesosa; i+= 1){
             // qtsPessoa +=1;
             somaIdade += idade;
 
