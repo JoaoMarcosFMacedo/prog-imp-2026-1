@@ -19,7 +19,7 @@ public class Exec01 {
             int valor = scanner.nextInt();
 
             if (existe(v, valor, i) != -1) {
-                System.out.println("Valor repetido! Recomece a digitação.");
+                System.out.printf(" Valor repetido! Digite um número diferente de %d. \n", valor);
 
                 i -= 1; 
                 
