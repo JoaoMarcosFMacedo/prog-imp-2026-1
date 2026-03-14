@@ -15,33 +15,37 @@ public class Exec01 {
     public static void preencher(int[] v) {
         for (int i = 0; i < v.length; i += 1) {
 
-            System.out.print("Digite um número: ");
+            System.out.printf("Digite um número do vetor na posição %d:  ", i);
             int valor = scanner.nextInt();
 
-            if (existe(v, valor, i)) {
+            if (existe(v, valor, i) != -1) {
                 System.out.println("Valor repetido! Recomece a digitação.");
 
-                i = -1; 
-                continue;
+                i -= 1; 
+                
             }
 
             v[i] = valor;
         }
     }
 
-    public static boolean existe(int[] v, int valor, int limite) {
+    public static int existe(int[] v, int valor, int limite) {
         for (int i = 0; i < limite; i += 1) {
             if (v[i] == valor) {
-                return true;
+                return 1;
             }
         }
-        return false;
+        return -1;
     }
 
     public static void imprimir(int[] v) {
-        for (int i = 0; i < v.length; i += 1) {
-            System.out.print(v[i] + " ");
-        }
-        System.out.println();
+        System.out.print( "{" );
+        if( v.length >= 1){
+        System.out.printf(" Posição %d: valor: %d,", 0,v[0]);            
+           for(int i = 1; i < v.length; i += 1) {
+               System.out.printf(", Posição %d: valor: %d ", i, v[i] );               
+            }
+            System.out.println( "} \n Vetor sem números repetidos!" );
+        } 
     }
 }
