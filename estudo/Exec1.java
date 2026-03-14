@@ -2,16 +2,15 @@ import java.util.Scanner;
 public class Exec1{
     public static Scanner scanner = new Scanner(System.in);
     public static final int ANO_FINAL = 2026;
+    public static int idade;
     public static void main( String [] args){
 
         int idade = 0, qtsPesosa = 0 , somaIdade = 0;
         double media;
         
         System.out.println("Óla, professor!");
-        System.out.print("Digite sua idade:");
 
-        idade = scanner.nextInt();
-
+        ReceberIdade();
         scanner.nextLine(); //para receber o entrer do número;
 
         System.out.printf("Sua idade é %d ", idade);
@@ -70,6 +69,15 @@ public class Exec1{
             System.out.println("Nenhuma pessoa foi cadastrada");
         }
 
+    }
+    public static int ReceberIdade(){
+        System.out.println("Digite sua idade");
+        idade = scanner.nextInt();
+        while( idade <= 0 ){
+            System.out.println("idade inválida, tente novamente");
+            idade = scanner.nextInt();
+        }
+        return idade;
     }
 
 }
