@@ -2,15 +2,15 @@ import java.util.Scanner;
 public class Exec1{
     public static Scanner scanner = new Scanner(System.in);
     public static final int ANO_FINAL = 2026;
-    public static int idade;
+    public static int idade = 0;
     public static void main( String [] args){
 
-        int idade = 0, qtsPesosa = 0 , somaIdade = 0;
-        double media;
+    
         
         System.out.println("Óla, professor!");
 
         ReceberIdade();
+
         scanner.nextLine(); //para receber o entrer do número;
 
         System.out.printf("Sua idade é %d ", idade);
@@ -42,40 +42,43 @@ public class Exec1{
             System.out.printf("Idade %d - Seu não é mais necessário votar", idade);
         }
         System.out.println();
-        int anoNasc = ANO_FINAL - idade;
-        System.out.printf("Você provavelmente nasceu em %d ", idade);
+        int anosNasc = ANO_FINAL - idade;
+        System.out.printf("Você provavelmente nasceu em %d ", anosNasc);
 
-        for(int i = 0; i < 15; i ++){
-            System.out.printf("%d", i);
-        }
+        // CadastrarPessoa();
         
-        for (int i = 1; i<= qtsPesosa; i+= 1){
-            // qtsPessoa +=1;
-            somaIdade += idade;
-
-            System.out.println("Digite sua idade");
-            idade = scanner.nextInt();
-            System.out.println();
-            System.out.printf("Quantidade de pessoas: %d° - Soma da idade: %d", i, somaIdade);
-
-        }
-        
-        if(qtsPesosa>=1){
-            media = somaIdade / qtsPesosa ;
-            System.out.printf(" A média é %f" , media);
-            System.out.println();
-        }
-        else {
-            System.out.println("Nenhuma pessoa foi cadastrada");
-        }
-
     }
+    // public static void CadastrarPessoa(){
+    //     int somaIdade, qtsPesosa;
+    //     double media;
+        
+    //     for (int i = 1; i <= qtsPesosa; i+= 1){
+            
+    //         somaIdade += idade;
+    
+    //         System.out.println("Digite sua idade");
+    //         idade = scanner.nextInt();
+    //         System.out.println();
+    //         System.out.printf("Quantidade de pessoas: %d° - Soma da idade: %d", i, somaIdade);
+    
+    //     }
+        
+    //     if(qtsPesosa>=1){
+    //         media = somaIdade / qtsPesosa ;
+    //         System.out.printf(" A média é %f" , media);
+    //         System.out.println();
+    //     }
+    //     else {
+    //         System.out.println("Nenhuma pessoa foi cadastrada");
+    //     }
+    // }
     public static int ReceberIdade(){
         System.out.println("Digite sua idade");
         idade = scanner.nextInt();
         while( idade <= 0 ){
             System.out.println("idade inválida, tente novamente");
             idade = scanner.nextInt();
+            
         }
         return idade;
     }
