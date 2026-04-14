@@ -37,7 +37,6 @@ public class Lacowhile{
             System.out.println("tente dnv c");
             c = scanner.nextInt();
 
-            
         }
         return c;
     }

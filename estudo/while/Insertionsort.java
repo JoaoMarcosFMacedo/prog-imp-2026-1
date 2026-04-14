@@ -1,18 +1,23 @@
 import java.util.Random;
 public class Insertionsort {
 
-    public static Random ramdom = new Random();
+    public static Random random = new Random();
     public static final int MIN = 0;
     public static final int MAX = 99;
+    public static final int TAM = 100;
     
 
 
     public static void main( String []args ){
     // int[] vetor = {1,5,4,8,9,10,2,3,6,7,-98, 78, }; 
-        int vator1 =; 
+        int[] vetor1 =  new int[TAM]; 
+        preencherRandom(vetor1);
+
+        imprimir(vetor1, vetor1.length);
 
         selectionSort(vetor1, vetor1.length);
-        imprimir(vetor1, vetor1.length );
+
+        imprimir(vetor1, vetor1.length);
     }
     public static void selectionSort(int[]v , int n){
         for(int i = 0; i < n - 1; i += 1){
@@ -46,7 +51,30 @@ public class Insertionsort {
     }
     public static void preencherRandom(int[]v){
         for(int i = 0 ; i < v.length ; i += 1){
-            v[i] = ramdom.nextInt((MIN - MAX) - MIN);
+            v[i] = random.nextInt( MAX - MIN + 1) + MIN;
         }
+    }
+    public static void prrencherRandomSemRepeticao(int[]v){
+        int num;
+        for(int i = 0; i < v.length; i+= 1){
+            do{
+                num = random.nextInt(MAX - MIN + 1) + MIN;
+                if(buscasequencial(v, i, num) != -1){
+                    System.out.printf("\n Número repetido! %d", num);
+
+                }
+            }while(buscasequencial(v, i, num)!= -1);
+            inserirOrdenado(v, i, num);                           
+        }
+
+    }
+
+    public static void inserirOrdenado(int[] v, int n, int x){
+        int pos = n;
+        while (pos >= 1 && x < v[pos - 1]){
+            v[pos] = v[pos-1];
+            pos -=1;
+        }
+        v[pos] = x;
     }
 }
