@@ -7,13 +7,28 @@ public class aula7{
         int[][] sm = new int [4][3];
 
 
-        System.out.println("teste");
+        System.out.println("Digite os valores para a Matriz sm: ");
+        preencherMatriz(sm);
+        System.out.println("Digite os valores para a Matriz m: ");
         preencherMatriz(m);
+
         
+        System.out.printf("----------------------\n");
         imprimirMatriz(m);
-    
+        System.out.printf("----------------------\n");
+        imprimirMatriz(sm);
+
+        System.out.printf("Digite o valor de x: ");
+        int x  = scanner.nextInt();
+
+        if( buscaSequencialMatriz(sm, sm.length) != 1 ){
+            System.out.printf("Não achou");
+
+        }else{
+            System.out.printf("-----> Achou <----   ");
+        }
     }
-    
+
     
     public static void preencherMatriz(int[][]m ){
 
@@ -41,5 +56,15 @@ public class aula7{
             }
             System.out.printf(" }\n");    
         }
+    }
+    public static int buscaSequencialMatriz(int[][] m, int x){
+        for(int i = 0; i < m.length; i += 1){
+            for(int j = 0; j < m[0].length; j += 1){
+                if(x == m[i][j]){
+                    return 1;
+                }
+            }
+        }
+        return -1;
     }
 }
