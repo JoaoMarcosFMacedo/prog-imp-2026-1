@@ -67,4 +67,8 @@ public class aula7{
         }
         return -1;
     }
+    public static void menorImpar(){
+        
+    }
+
 }
