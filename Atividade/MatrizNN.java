@@ -26,6 +26,8 @@ public class MatrizNN {
                 System.out.printf(" [ %d ]", matriz[i][j]);
             }
             System.out.printf("\n");
+
         }
+        
     }
 }
