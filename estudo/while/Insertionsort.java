@@ -68,7 +68,7 @@ public class Insertionsort {
         }
 
     }
-
+    
     public static void inserirOrdenado(int[] v, int n, int x){
         int pos = n;
         while (pos >= 1 && x < v[pos - 1]){
